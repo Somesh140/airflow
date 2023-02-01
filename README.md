@@ -12,3 +12,6 @@ Steps
  * check in the docker desktop the container is running
  
  * In the browser check ```localhost:8080```
+ * Split the terminal 
+ * In the new terminal run command ``` pip install apache-airflow```
+ * 
