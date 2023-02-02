@@ -10,9 +10,19 @@ def first_function_execute():
   return "hello world"
 
 with DAG(
-   dag_id="my_first_dag",
-    schedule_interval="0 10 * * *",
-    start_date=pendulum.datetime(2023, 1, 1, tz="US/Pacific"),
+    dag_id="first_dag",
+    schedule_interval="@daily",
+    default_args={
+      "owner":"airflow",
+      "retries":1,
+      "retry_delay":timedelta(minutes=5),
+      "start_date":datetime(2023,1,28)
+    },
     catchup=False,
-) as dag:
+) as f:
+.
+first_function_execute=PythonOperator(
+  task_id="first_function_execute",
+  python_callable=first_function_execute,
+)
   
