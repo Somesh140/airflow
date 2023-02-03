@@ -15,3 +15,5 @@ Steps
  * Split the terminal 
  * In the new terminal run command ``` pip install apache-airflow```
  * Inside dags directory create a file first_dag.py
+ * To stop the docker run the command ```docker-compose down```
+ 
